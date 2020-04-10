@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+
+{% block head %}
+    <title>edit post</title>
+{% endblock %}
+
+
+{% block body %}
+<br>
+
+<h2>Edit Blog Post:</h2>
+<br>
+<br>
+<form action='/posts/edit/{{post.id}}' method='POST'>
+    <label for="title">Title:</label>
+    <input class="form-control" name="title" id="title" type="text" placeholder="title" aria-label="title" value="{{post.title}}">
+    <br>
+    <label for="author">Author:</label>
+    <input class="form-control" name="author"id="author" type="text" placeholder="author" aria-label="author" value="{{post.author}}">
+    <br>
+    <label for="content">Post:</label>
+    <textarea class="form-control" name="content" type="text" placeholder="Enter Text" id="content" rows="3">{{post.content}}</textarea>
+    <br>
+    <input class="btn btn-primary"type='submit' value='Save'>
+</form>
+<hr>
+{% endblock %} 
